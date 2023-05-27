@@ -1,0 +1,26 @@
+h1, h2, h3, h4, h5, h6, a, p {
+  font-family: 'Space Grotesk', sans-serif;
+  color: var(--white);
+}
+
+h1, h2 {
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.1;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+a {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.33;
+}

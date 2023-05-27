@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  --white: #EEEEEE;
+  --white2: #F5F6F7;
+  --black: #1B191C;
+  --gray: #CFD3D6;
+}
+
+body {
+  background: var(--black);
+}
+
+@import "typo";
+@import "intro";
+@import "how";
+@import "footer";
