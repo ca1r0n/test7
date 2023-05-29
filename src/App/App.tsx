@@ -40,7 +40,6 @@ function App() {
                     title: "Error",
                     description: "Invalid address",
                     type: NotifyType.WARNING,
-                    id: Math.random().toString(),
                 }))
                 return
             }
@@ -51,14 +50,13 @@ function App() {
                     title: "Not available",
                     description: "Сannot establish a connection. Try another link",
                     type: NotifyType.WARNING,
-                    id: Math.random().toString(),
                 }))
                 return
             }
         } finally {
+            // блесрнг хочу defer из go
             setIsLoading(false)
         }
-
 
         addHistory(value)
         setCurrentAudio(value)
@@ -72,6 +70,7 @@ function App() {
     }, [error])
 
     const onBack = useCallback(() => {
+        // reset current audio
         setCurrentAudio(undefined)
     }, [])
 

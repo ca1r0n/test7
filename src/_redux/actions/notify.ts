@@ -1,11 +1,15 @@
 import {Notify, notifySlice} from "../slices";
 import {AppDispatch} from "../store.ts";
 
-export const AddAndRemoveNotify = (notify: Notify, ttl = 5000) => (dispatch: AppDispatch) => {
-    dispatch(notifySlice.actions.ADD_NOTIFY(notify))
+export const AddAndRemoveNotify = (notify: Omit<Notify, "id">, ttl = 5000) => (dispatch: AppDispatch) => {
+    const id = Math.random().toString()
+    dispatch(notifySlice.actions.ADD_NOTIFY({
+        ...notify,
+        id: id,
+    }))
 
     setTimeout(() => {
-        dispatch(notifySlice.actions.REMOVE_NOTIFY(notify.id))
+        dispatch(notifySlice.actions.REMOVE_NOTIFY(id))
     }, ttl)
 }
 

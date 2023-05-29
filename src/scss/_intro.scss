@@ -21,6 +21,10 @@
     max-width: 500px;
   }
 
+  &__a {
+    color: var(--black);
+  }
+
   &__title, &__desc, &__sub, &__insert {
     color: var(--black);
   }

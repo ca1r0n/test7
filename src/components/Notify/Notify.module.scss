@@ -12,9 +12,11 @@
 
   @media (max-width: 768px) {
     transform: none;
+    max-width: none;
     left: 12px;
     right: 12px;
     top: 12px;
+    width: auto;
   }
 }
 

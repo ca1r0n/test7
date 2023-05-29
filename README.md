@@ -1,3 +1,8 @@
+Сделал: 3, 4, 5
+w, s - громкость
+a, d - дорожка
+space - пауза/возспроизведение 
+
 https://spectacular-dentist-695.notion.site/frontend-05c190d05d644264afb29463a52f73e1
 
 <aside>
