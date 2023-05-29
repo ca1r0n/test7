@@ -15,7 +15,7 @@
 
 .input {
   cursor: text;
-  border: none;
+  border: 0.5px solid transparent;
   outline: none;
   background: #fff;
   padding: 32px 16px;
@@ -29,6 +29,10 @@
 
   @media (max-width: 768px) {
     padding: 16px;
+  }
+
+  &.errorInput {
+    border: 0.5px solid #C6A827
   }
 }
 
@@ -96,4 +100,13 @@
   font-weight: 300;
   line-height: 1.33;
   margin-top: 8px;
+}
+
+.errorImage {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 16px;
+  top: 50%;
+  transform: translate(0, -50%);
 }

@@ -5,6 +5,10 @@ import * as classNames from "classnames";
 
 const initValue = "https://"
 
+function addressIsValid(address: string): boolean {
+    return !address || address == initValue
+}
+
 function App() {
     const [history, setHistory] = useState<Array<string>>([])
     const [error, setError] = useState<string | undefined>(undefined)
@@ -22,7 +26,7 @@ function App() {
     }, [])
 
     const onChose = useCallback((value: string) => {
-        if (!value || value == initValue) {
+        if (addressIsValid(value)) {
             setError("Invalid address")
             return
         }
