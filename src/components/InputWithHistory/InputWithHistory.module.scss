@@ -1,0 +1,99 @@
+.box {
+  display: flex;
+  flex-direction: column;
+}
+
+.bigBox {
+  display: flex;
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+  display: flex;
+}
+
+.input {
+  cursor: text;
+  border: none;
+  outline: none;
+  background: #fff;
+  padding: 32px 16px;
+  width: 100%;
+
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.25;
+  color: #A4A3A4;
+
+
+  @media (max-width: 768px) {
+    padding: 16px;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  width: 96px;
+  height: 96px;
+  background: #F8D231;
+
+  @media (max-width: 768px) {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.select {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+
+  background: #FFFFFF;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  max-height: 200px;
+  overflow-y: scroll;
+  padding: 0 12px;
+}
+
+.item {
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 300;
+  line-height: 28px;
+  color: #A4A3A4;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  min-height: 28px;
+
+  // dots if over block
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  @media (max-width: 768px) {
+    padding: 8px 0;
+  }
+
+  &:hover {
+    color: #CBCBCB;
+  }
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.error {
+  color: #C6A827;
+
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.33;
+  margin-top: 8px;
+}

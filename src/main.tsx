@@ -4,7 +4,7 @@ import App from './App.tsx'
 import './scss/main.scss'
 
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('input') as HTMLElement).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
