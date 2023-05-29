@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="./vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&display=swap" rel="stylesheet">
+    <title>Тестовое задание</title>
+  <script type="module" crossorigin src="./assets/index-63b88729.js"></script>
+  <link rel="stylesheet" href="./assets/index-2885a376.css">
+</head>
+<body>
+<section class="intro">
+    <div class="intro__left">
+        <h1 class="intro__title">Play any audio sources directly in the browser!</h1>
+        <div class="intro__desktop">
+            <p class="intro__desc">Without any restrictions for free</p>
+            <p class="intro__sub">By uploading the audio file, you agree to our <a href="#">Terms of Service.</a></p>
+        </div>
+    </div>
+    <div class="intro__right">
+        <div id="input" class="input">input</div>
+    </div>
+    <div class="intro__mobile">
+        <p class="intro__desc">Without any restrictions for free</p>
+        <p class="intro__sub">By uploading the audio file, you agree to our <a href="#">Terms of Service.</a></p>
+    </div>
+</section>
+<section class="how">
+    <div class="how__left">
+        <h2 class="how__title">How It Works</h2>
+        <p class="how__desc">Lorem Ipsum is a "fish" text often used in print and web design. Lorem Ipsum has been the
+            standard "fish" for Latin texts since the early 16th century. At that time, an unnamed printer created a
+            large collection of font sizes and shapes, using Lorem Ipsum for print samples.</p>
+    </div>
+    <div class="how__right">
+        <img class="how__img" src="./assets/Illustration-b039cc70.png" alt="image">
+    </div>
+</section>
+<footer class="footer">
+    <h3 class="footer__title">Technical requirements</h3>
+    <form class="footer__form">
+        <label class="footer__label">
+            <input hidden class="footer__input" checked type="radio" name="tab" value="first">
+            <span class="footer__a">Own server</span>
+        </label>
+        <label class="footer__label">
+            <input hidden class="footer__input" type="radio" name="tab" value="second">
+            <span class="footer__a">Amazon Instance</span>
+        </label>
+    </form>
+    <div class="footer__slider-container">
+        <div class="footer__slider">
+            <div class="footer__slides">
+                <div id="first" class="footer__slide footer__slide--active">
+                    <div class="footer__block">
+                        <p class="footer__block-title">OS + apps</p>
+                        <p class="footer__block-desc">Unix/OSX + docker + nvidia-docker</p>
+                    </div>
+                    <div class="footer__block">
+                        <p class="footer__block-title">Free space</p>
+                        <p class="footer__block-desc">100 GB of free space</p>
+                    </div>
+                    <div class="footer__block">
+                        <p class="footer__block-title">CPU</p>
+                        <p class="footer__block-desc">4 cores or more (e.g. intel core i5)</p>
+                    </div>
+                    <div class="footer__block">
+                        <p class="footer__block-title">Graphics hardware</p>
+                        <p class="footer__block-desc">GPU: NVidia only 2Gb+</p>
+                    </div>
+                    <div class="footer__block">
+                        <p class="footer__block-title">Memory</p>
+                        <p class="footer__block-desc">16 GB RAM</p>
+                    </div>
+                </div>
+                <div id="second" class="footer__slide">
+                    <div class="footer__block">
+                        <p class="footer__block-title">Memory</p>
+                        <p class="footer__block-desc">g4dn.xlarge</p>
+                    </div>
+                    <div class="footer__block">
+                        <p class="footer__block-title">Memory</p>
+                        <p class="footer__block-desc">16 GB RAM</p>
+                    </div>
+                    <div class="footer__block">
+                        <p class="footer__block-title">GPU</p>
+                        <p class="footer__block-desc">1</p>
+                    </div>
+                    <div class="footer__block">
+                        <p class="footer__block-title">Storage</p>
+                        <p class="footer__block-desc">125 GB</p>
+                    </div>
+                    <div class="footer__block">
+                        <p class="footer__block-title">vCPUs</p>
+                        <p class="footer__block-desc">4</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // for slider
+    const slides = document.getElementsByClassName("footer__slides").item(0)
+
+    function updateState(id) {
+        for (el of slides.children) {
+            if (el.id === id) {
+                el.scrollIntoView();
+                return
+            }
+        }
+    }
+
+    updateState("first")
+
+    for (el of document.getElementsByClassName('footer__input')) {
+        el.addEventListener("click", (event) => {
+            updateState(event.target.value)
+        })
+    }
+</script>
+
+</body>
+</html>
