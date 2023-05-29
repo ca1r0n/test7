@@ -1,10 +1,10 @@
 import {AudioPlayer, InputWithHistory} from "./components";
 import {useCallback, useState} from "react";
 import styles from "./App.module.scss"
-import * as classNames from "classnames";
+import classNames from "classnames";
 
 const initValue = "https://"
-
+    
 function addressIsValid(address: string): boolean {
     return !address || address == initValue
 }

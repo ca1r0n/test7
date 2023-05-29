@@ -2,7 +2,7 @@ import {ChangeEvent, FC, useCallback, useRef, useState} from "react";
 import styles from "./InputWithHistory.module.scss"
 import {useOutside} from "../../hooks";
 import {Arrow, Warning} from "./Icons.tsx";
-import * as classNames from "classnames";
+import classNames from "classnames";
 
 export interface InputWithHistoryProps {
     errorMessage?: string
