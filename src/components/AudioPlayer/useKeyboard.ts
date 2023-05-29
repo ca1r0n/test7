@@ -30,11 +30,11 @@ export function useKeyboard(ref: RefObject<HTMLAudioElement>) {
                     break
                 case "KeyA":
                     // back time
-                    audio.currentTime = audio.currentTime - 10
+                    audio.currentTime = audio.currentTime - 10 < 0 ? 0 : audio.currentTime - 10
                     break
                 case "KeyD":
                     // forward time
-                    audio.currentTime = audio.currentTime + 10
+                    audio.currentTime = audio.currentTime + 10 > audio.duration ? audio.duration : audio.currentTime + 10
                     break
             }
         }

@@ -1,19 +1,20 @@
 import {ChangeEvent, FC, useCallback, useRef, useState} from "react";
-import styles from "./InputWithHistory.module.scss"
+import styles from "./InputWithSelect.module.scss"
 import {useOutside} from "../../hooks";
 import {Arrow, Warning} from "./Icons.tsx";
 import classNames from "classnames";
 
-export interface InputWithHistoryProps {
-    errorMessage?: string
+export interface InputWithSelectProps {
+    error?: string
     onChose?: (value: string) => void
     onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
     initValue?: string;
     placeholder?: string
     select?: string[];
+    disabled?: boolean;
 }
 
-export const InputWithHistory: FC<InputWithHistoryProps> = (props) => {
+export const InputWithSelect: FC<InputWithSelectProps> = (props) => {
     const refInput = useRef<HTMLInputElement | null>(null)
     const refBlock = useRef<HTMLDivElement | null>(null)
     const [isFocus, setIsFocus] = useState(true)
@@ -25,25 +26,17 @@ export const InputWithHistory: FC<InputWithHistoryProps> = (props) => {
         onBlur()
     })
 
-    const resetInput = useCallback(() => {
-        if (!refInput.current) return;
-
-        refInput.current.value = props.initValue || ""
-    }, [refInput, props.initValue])
-
     const onClick = useCallback(() => {
         if (!refInput) return;
 
         if (!refInput.current) return;
 
         props.onChose?.(refInput.current?.value)
-        resetInput()
         onBlur()
     }, [props, refInput])
 
     const onSelectClick = useCallback((value: string) => () => {
         props.onChose?.(value)
-        resetInput()
         onBlur()
     }, [props])
 
@@ -57,7 +50,7 @@ export const InputWithHistory: FC<InputWithHistoryProps> = (props) => {
                     ref={refInput}
                     onChange={props.onChange}
                     type="text"
-                    className={classNames(styles.input, props.errorMessage ? styles.errorInput : "")}
+                    className={classNames(styles.input, props.error ? styles.errorInput : "")}
                 />
                 {(isFocus && props.select && props.select.length != 0) &&
                     <div className={styles.select}>
@@ -72,15 +65,17 @@ export const InputWithHistory: FC<InputWithHistoryProps> = (props) => {
                         })}
                     </div>
                 }
-                {props.errorMessage && <div className={styles.errorImage}><Warning/></div>}
+                {props.error && <div className={styles.errorImage}><Warning/></div>}
             </div>
             <button
                 className={styles.btn}
-                onClick={onClick}>
+                onClick={onClick}
+                disabled={props.disabled}
+            >
                 <Arrow/>
             </button>
         </div>
-        {props.errorMessage && <div className={styles.error}>{props.errorMessage}</div>}
+        {<div className={classNames(styles.error, props.error ? styles.errorActive : "")}>{props.error}</div>}
     </div>
 }
 
